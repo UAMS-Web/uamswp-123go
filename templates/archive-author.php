@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 <div class="content-sidebar-wrap">
-	<main class="container-fluid doctor-list" id="genesis-content">
+	<main class="container-fluid profile-list" id="genesis-content">
 		<h1 class="sr-only">1-2-3-Go Profiles</h1>
 		<div class="row">
 			<div class="col-12 col-sm filter-col collapse">
@@ -40,14 +40,10 @@ get_header(); ?>
 						<button title="Toggle Filter Tray" class="filter-toggle"><span class="sr-only">Toggle Filter Tray</span><span class="fas fa-filter"></span></button>
                     </div>
                 </div>
-                <div class="card-list-container">
-                    <div class="card-list card-list-doctors">
-                        <?php echo facetwp_display( 'template', 'profiles' ); ?>
-                    </div>
-                </div>
+                <?php echo facetwp_display( 'template', 'profiles' ); ?>
                 <div class="row list-pagination">
 					<div class="col">
-						<?php echo do_shortcode('[facetwp load_more="true" label="Load more"]'); ?>
+						<?php echo facetwp_display( 'pager' ); ?>
 					</div>
 				</div>
             </div>

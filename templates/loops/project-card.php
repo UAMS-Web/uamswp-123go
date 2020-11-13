@@ -9,15 +9,15 @@
 ?>
     <div class="card">
         <picture>
-            <?php if ( has_post_thumbnail() && function_exists( 'fly_add_image_size' ) ) { ?>
-				<source srcset="<?php echo image_sizer(get_post_thumbnail_id($id), 253, 337, 'center', 'center'); ?> 1x, <?php echo image_sizer(get_post_thumbnail_id($id), 506, 675, 'center', 'center'); ?> 2x"
+        <?php if ( has_post_thumbnail() && function_exists( 'fly_add_image_size' ) ) { ?>
+				<source srcset="<?php echo image_sizer(get_post_thumbnail_id($id), 512, 288, 'center', 'center'); ?> 1x, <?php echo image_sizer(get_post_thumbnail_id($id), 1024, 576, 'center', 'center'); ?> 2x"
 					media="(min-width: 1px)">
-				<img src="<?php echo image_sizer(get_post_thumbnail_id(), 253, 337, 'center', 'center'); ?>" itemprop="image" class="card-img-top" alt="<?php echo get_the_title($id); ?>" />
+				<img src="<?php echo image_sizer(get_post_thumbnail_id(), 512, 288, 'center', 'center'); ?>" itemprop="image" class="card-img-top" alt="<?php echo get_the_title($id); ?>" />
 			<?php } elseif ( has_post_thumbnail() ) { ?>
-				<?php echo get_the_post_thumbnail( $id, 'medium',  array( 'itemprop' => 'image', 'class' => 'card-img-top' ) ); ?>
+				<?php echo get_the_post_thumbnail( $id, 'aspect-16-9-small',  array( 'itemprop' => 'image', 'class' => 'card-img-top' ) ); ?>
 			<?php } else { ?>
-				<source srcset="<?php echo UAMS_123GO_ROOT_URL; ?>assets/svg/no-image_3-4.svg" media="(min-width: 1px)">
-				<img src="<?php echo UAMS_123GO_ROOT_URL; ?>assets/img/no-image_3-4.jpg" alt="" />
+				<source srcset="<?php echo UAMS_123GO_ROOT_URL; ?>assets/svg/no-image_16-9.svg" media="(min-width: 1px)">
+				<img src="<?php echo UAMS_123GO_ROOT_URL; ?>assets/img/no-image_16-9.jpg" alt="" />
 			<?php } ?>
         </picture>
         <div class="card-body">

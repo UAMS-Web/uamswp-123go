@@ -16,8 +16,8 @@
 			<?php } elseif ( get_the_author_meta('avatar', $id) ) { ?>
 				<img src="<?php echo wp_get_attachment_image_url( get_the_author_meta('avatar', $id), 'full' ); ?>" class ="card-img-top" />
 			<?php } else { ?>
-				<source srcset="<?php echo UAMS_123GO_ROOT_URL; ?>assets/svg/no-image_3-4.svg" media="(min-width: 1px)">
-				<img src="<?php echo UAMS_123GO_ROOT_URL; ?>assets/img/no-image_3-4.jpg" alt="" />
+				<source srcset="<?php echo UAMS_123GO_ROOT_URL; ?>assets/svg/no-image_1-1.svg" media="(min-width: 1px)">
+				<img src="<?php echo UAMS_123GO_ROOT_URL; ?>assets/img/no-image_1-1.jpg" alt="" />
 			<?php } ?>
         </picture>
         <div class="card-body">

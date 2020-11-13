@@ -11,11 +11,15 @@ add_filter( 'facetwp_is_main_query', function( $is_main_query, $query ) {
 }, 10, 2 );
 
 add_filter( 'facetwp_shortcode_html', function( $output, $atts) {
-	if ( $atts['template'] = 'project' || $atts['template'] = 'profile' ) { // replace 'example' with name of your template
+	if ( !empty( $atts['template'] ) && 'projects' == $atts['template'] ) { // replace 'example' with name of your template
         /** modify replacement as needed, make sure you keep the facetwp-template class **/
-        $output = str_replace( 'facetwp-template', 'facetwp-template row list', $output );
+        $output = str_replace( 'facetwp-template', 'facetwp-template card-list list', $output );
 	}
-	return $output; 
+	if ( !empty( $atts['template'] ) && 'profiles' == $atts['template'] ) { // replace 'example' with name of your template
+        /** modify replacement as needed, make sure you keep the facetwp-template class **/
+        $output = str_replace( 'facetwp-template', 'facetwp-template card-list card-list-profiles', $output );
+	}
+	return $output;
 }, 10, 2 );
 
 // Turn on FWP Accessibility features
@@ -44,7 +48,7 @@ function fwp_add_facet_labels() {
     </script>
     <?php
 }
-add_action( 'wp_head', 'fwp_add_facet_labels', 100 );
+add_action( 'wp_footer', 'fwp_add_facet_labels', 100 );
 
 // Add FacetWP Sources - User keywords & user locations
 add_filter( 'facetwp_facet_sources', function( $sources ) {
@@ -141,9 +145,9 @@ function uamswp_123go_script_register() {
     //     wp_enqueue_style( 'leaflet-css', UAMS_FAD_ROOT_URL . 'assets/leaflet/leaflet.css', array(), '1.1', 'all');
     //     wp_enqueue_script( 'leaflet-js', UAMS_FAD_ROOT_URL . 'assets/leaflet/leaflet-bing.js', array(), null, false );
     // }
-    // if ( (is_archive() && ('provider' == $post_type)) ) {
-    //     wp_enqueue_script( 'mobile-filter-toggle', UAMS_FAD_ROOT_URL . 'assets/js/mobile-filter-toggle.js', array('jquery'), null, false );
-    // }
+    if ( (is_archive() && ('project' == $post_type)) ) {
+        wp_enqueue_script( 'mobile-filter-toggle', UAMS_123GO_ROOT_URL . 'assets/js/mobile-filter-toggle.js', array('jquery'), null, false );
+    }
 	wp_enqueue_style( '123go-css', UAMS_123GO_ROOT_URL . 'assets/css/uamswp-123go.css', array(), '1.0', 'all');
 }
 add_action( 'wp_enqueue_scripts', 'uamswp_123go_script_register' );

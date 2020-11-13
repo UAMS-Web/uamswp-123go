@@ -12,7 +12,7 @@ get_header(); ?>
             <div class="row mx-0 mx-xs-n4 mx-sm-n8">
                 <div class="col-12 col-xs p-4 py-xs-0 px-xs-4 px-sm-8 order-2 text">
     <?php //if(have_posts()) : while(have_posts()) : the_post();
-    echo '<h1 class="page-title">'. get_the_author() .'</h1>';
+    echo '<h1 class="page-title">'. get_the_author_meta("display_name", $authorID) .'</h1>';
    // echo $author;
     ?>
     <?php echo '<p>Academic Title: ' . rwmb_meta( 'profile_academic_title', array( 'object_type' => 'user' ), $authorID ) .'</p>'; ?>
