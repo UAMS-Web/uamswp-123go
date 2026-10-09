@@ -16,7 +16,7 @@
  * Plugin Name:       UAMSWP 123Go
  * Plugin URI:        https://gihub.com/UAMS-Web/UAMSWP-123go
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Todd McKee
  * Author URI:        http://www.uams.edu
  * License:           GPL-2.0+
